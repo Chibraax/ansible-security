@@ -1,8 +1,7 @@
 [DEFAULT]
 ignoreip = 127.0.0.1
 findtime = 10m
-bantime = 1h
-maxretry = 3
+bantime = {{ bantime }}
 
 {% if ssh_enabled is true %}
   [sshd]

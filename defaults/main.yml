@@ -3,3 +3,4 @@
 port_ssh: 56556
 ssh_enabled: true
 haproxy_enabled: true
+bantime: 1h
