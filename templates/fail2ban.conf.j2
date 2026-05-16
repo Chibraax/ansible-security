@@ -1,0 +1,19 @@
+[DEFAULT]
+ignoreip = 127.0.0.1
+findtime = 10m
+bantime = 1h
+maxretry = 3
+
+{% if ssh_enabled is true %}
+  [sshd]
+  enabled = true
+  port = {{ port_ssh }}
+  banaction = nftables-multiport
+{% endif %}
+
+{% if haproxy_enabled is true %}
+  [haproxy]
+  enabled = true
+  port = 80,443
+  banaction = nftables-multiport
+{% endif %}

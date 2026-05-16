@@ -1,0 +1,8 @@
+---
+- name: Listen ssh Daemon on port {{ port_ssh }}
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#Port 22'
+    line: 'Port {{ port_ssh }}'
+  tags: ssh
+  notify: sshd

@@ -1,0 +1,22 @@
+---
+- name: Install fail2ban
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - fail2ban
+    - nftables
+  tags: fail2ban
+  notify:
+    - fail2ban
+    - nftables
+
+- name: Configuration of fail2ban
+  ansible.builtin.template:
+    src: templates/fail2ban.conf.j2
+    dest: /etc/fail2ban/jail.d/custom.conf
+    owner: root
+    group: root
+    mode: '0644'
+  tags: fail2ban
+  notify: fail2ban

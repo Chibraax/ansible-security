@@ -1,0 +1,11 @@
+---
+
+- name: Fail2ban configuration
+  ansible.builtin.import_tasks:
+    file: fail2ban.yml
+  tags: security
+
+- name: SSH configuration
+  ansible.builtin.import_tasks:
+    file: ssh.yml
+  tags: security
