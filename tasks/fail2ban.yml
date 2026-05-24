@@ -14,7 +14,7 @@
 - name: Configuration of fail2ban
   ansible.builtin.template:
     src: templates/fail2ban.conf.j2
-    dest: /etc/fail2ban/jail.d/custom.conf
+    dest: /etc/fail2ban/jail.d/jail.local
     owner: root
     group: root
     mode: '0644'

@@ -1,6 +1,7 @@
 ---
 
-port_ssh: 56556
+port_ssh: 5656
 ssh_enabled: true
 haproxy_enabled: true
 bantime: 1h
+maxretry: 3
